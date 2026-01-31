@@ -13,14 +13,15 @@ export default function NameBanner() {
   return (
     <h1
       style={{
-        fontSize: "64px",
+        fontSize: "78px",
         marginBottom: "12px",
-        fontFamily:
-          "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+        fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
         letterSpacing: "-0.5px",
         color: "#22c55e",
-      }}
+        textAlign: "center",
+        }}
     >
+
       Ajita Bhardwaj
       <span
         style={{
