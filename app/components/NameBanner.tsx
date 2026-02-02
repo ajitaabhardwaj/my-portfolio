@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-export default function NameBanner() {
+type NameBannerProps = {
+  name?: string;
+  className?: string;
+};
+
+export default function NameBanner({
+  name = "Ajita Bhardwaj",
+  className = "",
+}: NameBannerProps) {
   const [cursorOn, setCursorOn] = useState(true);
 
   useEffect(() => {
@@ -12,28 +20,27 @@ export default function NameBanner() {
 
   return (
     <h1
-      style={{
-        fontSize: "78px",
-        marginBottom: "12px",
-        fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-        letterSpacing: "-0.5px",
-        color: "#22c55e",
-        textAlign: "center",
-        }}
+      className={[
+        "inline-block font-mono tracking-tight",
+        "text-green-500 transition-opacity",
+        "text-4xl sm:text-5xl lg:text-6xl xl:text-[78px]",
+        "mb-3",
+        className,
+      ].join(" ")}
     >
-
-      Ajita Bhardwaj
+      {name}
       <span
-        style={{
-          color: "#e5e7eb",
-          marginLeft: "6px",
-          display: "inline-block",
-          width: "10px",
-          opacity: cursorOn ? 1 : 0,
-        }}
+        className={[
+          "ml-2 inline-block",
+          "text-green-500 transition-opacity",
+          cursorOn ? "opacity-100" : "opacity-0",
+        ].join(" ")}
+        aria-hidden="true"
       >
-        ▍
+        _
       </span>
     </h1>
+    
+    
   );
 }

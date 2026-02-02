@@ -6,30 +6,57 @@ import SkillsSection from "./components/SkillsSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
+import SectionDivider from "./components/SectionDivider";
 
 export default function Home() {
+  const pageStyle: React.CSSProperties = {
+    padding: "72px 24px",
+  };
+
+  const containerStyle: React.CSSProperties = {
+    maxWidth: "1240px",
+    margin: "0 auto",
+  };
+
   const cardStyle: React.CSSProperties = {
-    marginBottom: "24px",
-    padding: "22px",
-    borderRadius: "12px",
-    background: "rgba(2,6,23,0.45)",
-    border: "1px solid rgba(255,255,255,0.10)",
+    padding: "24px",
+    borderRadius: "14px",
+    background: "rgba(2,6,23,0.55)",
+    border: "1px solid rgba(148,163,184,0.12)",
+    backdropFilter: "blur(6px)",
   };
 
   return (
-    <main style={{ padding: "64px 24px" }}>
-      <IntroSection />
+    <main style={pageStyle}>
+      <div style={containerStyle}>
+        <section id="home">
+          <IntroSection />
+        </section>
 
-      {/* TERMINAL */}
-      <div style={{ marginBottom: "28px" }}>
-        <TerminalCard />
+        <SectionDivider space={56} />
+
+        <section id="skills">
+          <SkillsSection />
+        </section>
+
+        <SectionDivider space={56} />
+
+        <section id="experience">
+          <ExperienceSection />
+        </section>
+
+        <SectionDivider space={56} />
+
+        <section id="projects">
+          <ProjectsSection />
+        </section>
+
+        <SectionDivider space={56} />
+
+        <section id="contact">
+          <ContactSection cardStyle={cardStyle} />
+        </section>
       </div>
-
-      {/* SECTIONS */}
-      <SkillsSection cardStyle={cardStyle} />
-      <ExperienceSection cardStyle={cardStyle} />
-      <ProjectsSection cardStyle={cardStyle} />
-      <ContactSection cardStyle={cardStyle} />
     </main>
   );
 }
