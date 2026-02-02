@@ -70,7 +70,7 @@ export default function ContactSection({
 
         <div style={{ color: text }}>
           <span style={{ color: muted }}>Phone:</span>{" "}
-          <span style={{ color: "#e5e7eb" }}>+1 (XXX) XXX-XXXX</span>
+          <span style={{ color: "#e5e7eb" }}>+1 (773) 758-5226</span>
         </div>
       </div>
 
